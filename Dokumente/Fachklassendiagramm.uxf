@@ -6,7 +6,7 @@ nachname: String
 geburtsdatum: Date
 email: String
 passwort: String
-isAdmin: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>110</y><w>210</w><h>120</h></coordinates><panel_attributes>Buchung
+isAdmin: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>110</y><w>210</w><h>130</h></coordinates><panel_attributes>Buchung
 --
 id: Long
 status: String
@@ -21,7 +21,7 @@ erstellten &gt;</panel_attributes><additional_attributes>10;20;190;20</additiona
 --
 id: Long
 einzel: boolean
-platz: List&lt;Platz&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>220</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=-
+platz: List&lt;Platz&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>230</y><w>90</w><h>140</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..*
-gehören &gt;</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element></diagram>
+gehören &gt;</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element></diagram>
