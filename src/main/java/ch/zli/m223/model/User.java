@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -41,7 +42,8 @@ public class User {
     private boolean isadmin;
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnoreProperties("user")
+    @JsonIgnore
+    //@JsonIgnoreProperties("user")
     @Fetch(FetchMode.JOIN)
     private Set<Buchung> buchungen;
 

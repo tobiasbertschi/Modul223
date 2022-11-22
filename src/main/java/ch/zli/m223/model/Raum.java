@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -26,12 +27,13 @@ public class Raum {
     private boolean einzel;
 
     @OneToMany(mappedBy = "raum")
-    @JsonIgnoreProperties("raum")
+    @JsonIgnore
+    //@JsonIgnoreProperties("raum")
     @Fetch(FetchMode.JOIN)
     private Set<Buchung> buchung;
 
     @OneToMany(mappedBy = "raum")
-    @JsonIgnoreProperties("raum")
+    //@JsonIgnoreProperties("raum")
     @Fetch(FetchMode.JOIN)
     private Set<Platz> platz;
 
