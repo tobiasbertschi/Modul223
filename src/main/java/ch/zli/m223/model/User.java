@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Fetch;
@@ -17,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
+})
 public class User {
 
     @Id
@@ -43,7 +48,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore
-    //@JsonIgnoreProperties("user")
+    // @JsonIgnoreProperties("user")
     @Fetch(FetchMode.JOIN)
     private Set<Buchung> buchungen;
 
@@ -103,7 +108,7 @@ public class User {
         this.isadmin = isAdmin;
     }
 
-     public Set<Buchung> getBuchungen() {
+    public Set<Buchung> getBuchungen() {
         return buchungen;
     }
 

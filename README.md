@@ -36,3 +36,5 @@ Die automatischen Tests können mit `./mvnw quarkus:test` ausgeführt werden. F�
 Durch ein Missverständniss mit Herr Bosshard habe ich im Fachklassendiagramm keine Klasse für Platz erstellt, was ich nun beim realisieren angepasst habe.
 
 Statt der Kommentarfunktion habe ich nun eine Raumverwaltung & eine Platzverwaltung gemacht die vom Admin verwaltet werden kann.
+
+Neuen Endpoint für Login erstellt, welchen ich bei den Schnittstellen vergessen habe

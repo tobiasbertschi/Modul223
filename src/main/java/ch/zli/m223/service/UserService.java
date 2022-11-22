@@ -35,8 +35,11 @@ public class UserService {
 
     @Transactional
     public User findUser(Long id) {
-        /*var entity = entityManager.createQuery("FROM User u WHERE u.id = :id", User.class).setParameter("id", id);
-        return entity.getSingleResult();*/
+        /*
+         * var entity = entityManager.createQuery("FROM User u WHERE u.id = :id",
+         * User.class).setParameter("id", id);
+         * return entity.getSingleResult();
+         */
         var entity = entityManager.find(User.class, id);
         return entity;
 
@@ -47,6 +50,7 @@ public class UserService {
         return query.getResultList();
     }
 
+    @Transactional
     public Optional<User> findByEmail(String email) {
         return entityManager
                 .createNamedQuery("User.findByEmail", User.class)
@@ -54,5 +58,15 @@ public class UserService {
                 .getResultStream()
                 .findFirst();
     }
+
+    /*
+     * public Optional<User> findByEmail(String email){
+     * return entityManager
+     * .createQuery("SELECT p FROM User p WHERE p.email = :email", User.class)
+     * .setParameter("email", email)
+     * .getResultStream()
+     * .findFirst();
+     * }
+     */
 
 }
