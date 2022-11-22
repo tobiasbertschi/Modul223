@@ -33,6 +33,7 @@ public class Raum {
     private Set<Buchung> buchung;
 
     @OneToMany(mappedBy = "raum")
+    @JsonIgnore
     //@JsonIgnoreProperties("raum")
     @Fetch(FetchMode.JOIN)
     private Set<Platz> platz;
