@@ -1,0 +1,27 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>80</x><y>100</y><w>230</w><h>130</h></coordinates><panel_attributes>User
+--
+id: Long
+vorname: String
+nachname: String
+geburtsdatum: Date
+email: String
+passwort: String
+isAdmin: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>110</y><w>210</w><h>120</h></coordinates><panel_attributes>Buchung
+--
+id: Long
+status: String
+datum: Date
+ganzTag: boolean
+notiz: String
+user: User
+raum: Raum</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>150</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..*
+erstellten &gt;</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>350</y><w>210</w><h>70</h></coordinates><panel_attributes>Raum
+--
+id: Long
+einzel: boolean
+platz: List&lt;Platz&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>220</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..*
+gehören &gt;</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element></diagram>
