@@ -27,7 +27,7 @@ public class Buchung {
     private Date datum;
 
     @Column
-    private boolean ganzTag;
+    private boolean ganztag;
 
     @Column
     private String notiz;
@@ -65,11 +65,11 @@ public class Buchung {
     }
 
     public boolean isGanzTag() {
-        return ganzTag;
+        return ganztag;
     }
 
     public void setGanzTag(boolean ganzTag) {
-        this.ganzTag = ganzTag;
+        this.ganztag = ganzTag;
     }
 
     public String getNotiz() {

@@ -38,7 +38,7 @@ public class User {
     private String passwort;
 
     @Column
-    private boolean isAdmin;
+    private boolean isadmin;
 
     @OneToMany(mappedBy = "user")
     @JsonIgnoreProperties("user")
@@ -94,11 +94,11 @@ public class User {
     }
 
     public boolean isAdmin() {
-        return isAdmin;
+        return isadmin;
     }
 
     public void setAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
+        this.isadmin = isAdmin;
     }
 
      public Set<Buchung> getBuchungen() {
