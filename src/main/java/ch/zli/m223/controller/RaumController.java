@@ -3,6 +3,7 @@ package ch.zli.m223.controller;
 import java.util.List;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -20,6 +21,7 @@ import ch.zli.m223.model.Raum;
 import ch.zli.m223.service.RaumService;
 
 @Path("raum/")
+@RolesAllowed("admin")
 public class RaumController {
 
     @Inject
