@@ -1,10 +1,10 @@
-# Übungsprojekt: Punch Clock
+# Projekt: CoWorking Space
 
-Punch Clock ist ein Zeiterfassungssystem, welches mit Quarkus entwickelt wird.
+Der Coworking Space ist ein Tool bei welchem man Arbeitsplätze in Büros buchen kann. Das Projekt wurde mit Quarkus entwickelt und enthaltet eine Registrierung, ein Login, eine Möglichkeit eine Buchung zu machen und diese auch wieder zu stornieren. Der Admin hat zudem die Möglichkeit einen User zu Verwalten, Buchungen zu Verwalten, neue Plätze hinzuzufügen und auch neue Räume zu erstellen. 
 
 ## Erste Schritte
 
-1. Erstelle eine Kopie (fork) von diesem Projekt.
+1. Erstelle eine Kopie (fork) von einem Quarkus Projekt.
 1. Stelle sicher, dass Docker installiert ist und läuft.
 1. Stelle sicher, dass Visual Studio Code und die Erweiterung Remote Container installiert ist.
 1. Klone (clone) das Projekt lokal, um damit arbeiten zu können.
@@ -31,10 +31,42 @@ Die Daten werden in einer PostgreSQL-Datenbank gespeichert. In der Entwicklungsu
 
 Die automatischen Tests können mit `./mvnw quarkus:test` ausgeführt werden. Für die automatischen Tests wird nicht die PostgreSQL-Datenbank verwendet, sondern eine H2-Datenbank, welche sich im Arbeitsspeicher während der Ausführung befindet.
 
+## Projekt starten
 
+Das Projekt kann man über den Command `./mvnw quarkus:dev` gestartet werden.
 
-Durch ein Missverständniss mit Herr Bosshard habe ich im Fachklassendiagramm keine Klasse für Platz erstellt, was ich nun beim realisieren angepasst habe.
+## Testdaten laden
 
-Statt der Kommentarfunktion habe ich nun eine Raumverwaltung & eine Platzverwaltung gemacht die vom Admin verwaltet werden kann.
+Die Testdaten werden über das `import.sql` im Ordner `ressources` geladen.
 
-Neuen Endpoint für Login erstellt, welchen ich bei den Schnittstellen vergessen habe
+## Testuser / Zugangsdaten
+
+`Admin:`
+vorname = Tobias
+nachname = Bertschi
+geburtsdatum = 2004-11-12
+email = gotteron89tb@gmail.com
+passwort = tobiasbertschi
+isAdmin = true
+
+`Mitglied:`
+vorname = Maurin
+nachname = Schucan
+geburtsdatum = 2004-12-04
+email = maurin.schucan@lernende.bbw.ch
+passwort = maurinschucan
+isAdmin = false
+
+## Sonstiges
+
+Durch ein Missverständniss mit Herr Bosshard habe ich im Fachklassendiagramm eine Klassen nicht erstellt. (Raum)
+Andere Klassen musste ich ebenfalls noch zusätzlich erstellen, da ich bei der Planung noch nicht realisiert habe, dass man diese benötigt.
+
+Statt der Kommentarfunktion habe ich nun eine Raumverwaltung & eine Platzverwaltung gemacht die vom Admin verwaltet werden kann, da die Kommentarfunktion etwas zu zeitaufwändig war und ich die Idee für die Platz- und Raumverwaltung bei der Planung noch nicht hatte.
+
+Für diese neuen Funktionen und das Login musste ich dann auch noch Endpoints erstellen, welche ich bei den Schnittstellen vergessen habe aufzuführen.
+
+## Github
+
+Hier ist noch der Link zu meinem GitHub:
+- https://github.com/tobiasbertschi/Modul223
