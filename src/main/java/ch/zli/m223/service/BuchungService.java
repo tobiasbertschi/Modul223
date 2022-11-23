@@ -37,7 +37,6 @@ public class BuchungService {
     public Buchung findBuchung(Long id) {
         var entity = entityManager.find(Buchung.class, id);
         return entity;
-
     }
 
     public List<Buchung> findAll() {
