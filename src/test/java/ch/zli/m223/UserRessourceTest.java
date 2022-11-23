@@ -16,7 +16,7 @@ public class UserRessourceTest {
 
     @Test
     @TestSecurity(user = "role", roles = "Admin")
-    public void testIndexEndpoint() {
+    public void testGetUserEndpoint() {
         given()
                 .when().get("/user")
                 .then()
