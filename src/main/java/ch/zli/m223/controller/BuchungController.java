@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -57,6 +58,14 @@ public class BuchungController {
     @Operation(summary = "Buchung löschen.", description = "Löscht eine Buchung anhand der Id.")
     public void delete(@PathParam("id") Long id) {
         buchungService.deleteBuchung(id);
+    }
+
+    @RolesAllowed("Admin")
+    @Path("/{id}")
+    @PUT
+    @Operation(summary = "Buchung updaten.", description = "Updated eine Buchung.")
+    public Buchung update(@PathParam("id") Long id, Buchung buchung) {
+        return buchungService.updateBuchung(id, buchung);
     }
 
 }

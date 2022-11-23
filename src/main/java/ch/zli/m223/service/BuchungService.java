@@ -22,6 +22,12 @@ public class BuchungService {
     }
 
     @Transactional
+    public Buchung updateBuchung(Long id, Buchung buchung) {
+        buchung.setId(id);
+        return entityManager.merge(buchung);
+    }
+
+    @Transactional
     public void deleteBuchung(Long id) {
         var entity = entityManager.find(Buchung.class, id);
         entityManager.remove(entity);

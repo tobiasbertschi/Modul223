@@ -22,7 +22,7 @@ public class PlatzService {
     }
 
     @Transactional
-    public Platz updateUser(Long id, Platz platz) {
+    public Platz updatePlatz(Long id, Platz platz) {
         platz.setId(id);
         return entityManager.merge(platz);
     }

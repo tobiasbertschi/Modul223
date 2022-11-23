@@ -55,7 +55,7 @@ public class PlatzController {
     @PUT
     @Operation(summary = "Updates an user.", description = "Updates an user by its id.")
     public Platz update(@PathParam("id") Long id, Platz platz) {
-        return platzService.updateUser(id, platz);
+        return platzService.updatePlatz(id, platz);
     }
 
     @Path("/{id}")

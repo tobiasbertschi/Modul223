@@ -21,7 +21,7 @@ import ch.zli.m223.model.Raum;
 import ch.zli.m223.service.RaumService;
 
 @Path("raum/")
-@RolesAllowed("admin")
+@RolesAllowed("Admin")
 public class RaumController {
 
     @Inject
