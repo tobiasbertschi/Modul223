@@ -25,11 +25,23 @@ public class LoginService {
         Optional<User> user = userService.findByEmail(loginDaten.getEmail());
 
         try {
-            if (user.isPresent() && user.get().getPasswort().equals(loginDaten.getPasswort())) {
+            if (user.isPresent() && user.get().getPasswort().equals(loginDaten.getPasswort()) && user.get().isAdmin() == true) {
                 String token = Jwt
                         .issuer("https://zli.example.com/")
                         .upn(loginDaten.getEmail())
-                        .groups(new HashSet<>(Arrays.asList("Mitglied", "Admin")))
+                        .groups(new HashSet<>(Arrays.asList( "Admin")))
+                        .expiresIn(Duration.ofHours(24))
+                        .sign();
+                return Response
+                        .ok(user.get())
+                        .cookie(new NewCookie("coworkingspace", token))
+                        .header("Authorization", "Bearer " + token)
+                        .build();
+            } else if(user.isPresent() && user.get().getPasswort().equals(loginDaten.getPasswort()) && user.get().isAdmin() == false) {
+                String token = Jwt
+                        .issuer("https://zli.example.com/")
+                        .upn(loginDaten.getEmail())
+                        .groups(new HashSet<>(Arrays.asList("Mitglied")))
                         .expiresIn(Duration.ofHours(24))
                         .sign();
                 return Response
@@ -39,6 +51,7 @@ public class LoginService {
                         .build();
             }
         } catch (Exception e) {
+            //System.out.println(e.getMessage());
             System.err.println("Passwort konnte nicht validiert werden.");
         }
 
