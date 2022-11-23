@@ -2,14 +2,11 @@ package ch.zli.m223;
 
 import org.junit.jupiter.api.Test;
 
-import ch.zli.m223.model.Buchung;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.security.TestSecurity;
 import io.restassured.http.ContentType;
 
 import static io.restassured.RestAssured.given;
-
-import java.util.Date;
 
 @QuarkusTest
 public class BuchungRessourceTest {
